@@ -1,24 +1,33 @@
-from flask import Flask
+
+""" Minimal flask app"""
+
+from flask import Flask, render_template
+
+#make the application
 app = Flask(__name__)
 
+#make the route
+@app.route("/")
 
-@app.route('/')
+#define a function for hello world
 def hello():
-    return "Hello World!"
+    return render_template('home.html')
 
-if __name__ == '__main__':
-    app.run()
+# make a second route 
 
-# """ Minimal flask app"""
+@app.route("/about")
+def preds():
+    return render_template('about.html')
 
+
+# This also works with the name == main thing
 # from flask import Flask
-
-# #make the application
 # app = Flask(__name__)
 
-# #make the route
-# @app.route("/")
 
-# #define a function for hello world
+# @app.route('/')
 # def hello():
-#     return "Hello World"
+#     return "Hello World!"
+
+# if __name__ == '__main__':
+#     app.run()
