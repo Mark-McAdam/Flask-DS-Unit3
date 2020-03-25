@@ -35,8 +35,19 @@ def create_app():
 
     return app
 
-#     for tweet in tweets:
+
+# How I manually added tweets from elon musk to the database.
+# from TWITOFF.twitter import *
+# twitter_user=TWITTER.get_user('elonmusk')
+# tweets=twitter_user.timeline(count=200, exclude_replies=True,include_rts=False, tweet_mode='extended')
+# db_user = User(id=twitter_user.id, name=twitter_user.screen_name, newest_tweet_id=tweets[0].id)
+
+
+# for tweet in tweets:
 # ...     embedding=BASILICA.embed_sentence(tweet.full_text,model='twitter')
-# ...     db_tweets = Tweet(id=tweet.id, text=tweet.full_text[:500], embedding=embedding)
+# ...     db_tweets = Tweet(id=tweet.id, text=tweet.full_text[:500], user_id=twitter_user.id, embedding=embedding) 
 # ...     db.session.add(db_tweets)
 # ...     db_user.tweets.append(db_tweets)
+
+# db.session.add(db_user)
+# db.session.commit()
