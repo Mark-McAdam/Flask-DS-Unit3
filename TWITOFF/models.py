@@ -19,6 +19,9 @@ class Tweet(db.Model):
     text = db.Column(db.Unicode(300))
     user_id = db.Column(db.BigInteger, db.ForeignKey('user.id'), nullable=False)
     user = db.relationship('User', backref=db.backref('tweets', lazy=True))
+
+    embedding = db.Column(db.PickleType, nullable=False)
+
     def __repr__(self):
         # return f"<Tweet {self.text}"
         return'<Tweet: {}>'.format(self.text)

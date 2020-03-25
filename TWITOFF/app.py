@@ -25,4 +25,12 @@ def create_app():
     def root():
         users = User.query.all()
         return render_template('base.html', title='Home Page', users=users)
+
+    @app.route('/reset')
+    def reset():
+        db.drop_all()
+        db.create_all()
+        return render_template('base.html', title = 'RESET TED', users=[])
+
+
     return app
