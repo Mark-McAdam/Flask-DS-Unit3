@@ -34,3 +34,9 @@ def create_app():
 
 
     return app
+
+#     for tweet in tweets:
+# ...     embedding=BASILICA.embed_sentence(tweet.full_text,model='twitter')
+# ...     db_tweets = Tweet(id=tweet.id, text=tweet.full_text[:500], embedding=embedding)
+# ...     db.session.add(db_tweets)
+# ...     db_user.tweets.append(db_tweets)
