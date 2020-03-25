@@ -14,9 +14,9 @@ def create_app():
     app = Flask(__name__)
 
     # added this to suppress a warning that I was receiving. 
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     #add config for the database
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
+    app.config['SQLALCHEMY_DATABASE_URI'] = config('DATABASE_URL')
     #initialize database for the app - move to postgresql for the final format
     db.init_app(app)
 
