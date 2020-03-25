@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset='utf-8'>
+        <title>Flask {{ title }}</title>
+    </head>
+    <body>
+        <h1> I'm in X Flask App  {{ title }}</h1>
+        <p> About It Though </p>
+        <ul>
+        {% for user in users %}
+        <li>{{ user.name }}</li>
+        {% endfor %}
+        </ul>
+
+
+    </body>
+
+</html>
