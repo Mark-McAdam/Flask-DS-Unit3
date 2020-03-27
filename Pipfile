@@ -17,6 +17,7 @@ python-dotenv = "*"
 python-decouple = "*"
 psycopg2-binary = "*"
 flask = "*"
+pprint = "*"
 
 [requires]
 python_version = "3.7"
